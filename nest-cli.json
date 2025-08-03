@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/notas/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/notas/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/notas",
+  "projects": {
+    "notas": {
+      "type": "application",
+      "root": "apps/notas",
+      "entryFile": "main",
+      "sourceRoot": "apps/notas/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/notas/tsconfig.app.json"
+      }
+    },
+    "notas-api": {
+      "type": "application",
+      "root": "apps/notas-api",
+      "entryFile": "main",
+      "sourceRoot": "apps/notas-api/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/notas-api/tsconfig.app.json"
+      }
+    }
+  }
+}

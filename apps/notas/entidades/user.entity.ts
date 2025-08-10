@@ -17,8 +17,16 @@ export class User extends BaseEntity {
     @Column({ nullable: true })
     apellido: string;
 
+    @Column({ nullable: false })
+    password?: string;
+
+    @Column({ nullable: false , unique: true})
+    correo: string;
+
     @OneToMany(type => Seccion, Seccion => Seccion.User)
-    users: User[];
+    Seccion: Seccion[];
+
+
 
     @DeleteDateColumn()
     deleted_at: Date;

@@ -1,3 +1,4 @@
+import { AuthModule } from '../../notas-api/src/auth/auth.module';
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -9,6 +10,7 @@ import { Notas } from '../entidades/notas.entity';
 
 @Module({
   imports: [
+        AuthModule, 
     ConfigModule.forRoot({ envFilePath: '.env' }),
 
     TypeOrmModule.forRoot({
@@ -22,7 +24,6 @@ import { Notas } from '../entidades/notas.entity';
         User,
         Seccion,
         Notas
-
       ],
       synchronize: true,
     }),
